@@ -46,7 +46,7 @@ public class Card {
 
   @Override
   public String toString() {
-    return String.format("%s %s", rank, suit);
+    return String.format("%2s %s", rank, suit);
   }
 
 }
