@@ -119,7 +119,7 @@ public class simpleWar {
     }
 
 
-  private static class Referree implements Comparator<Card>{
+  protected static class Referree implements Comparator<Card>{
 
 
     @Override

@@ -10,22 +10,18 @@ package edu.cnm.deepdive;
  *  * @version 1.0
  */
 
-public class Card {
+public class Card implements Comparable<Card> {
 
   private Rank rank;
   private Suit suit;
 
 
   /**
-   * Initialized the <code>Card</code> instance with the specified {@link Suit}
-   *  and {@link Rank}
+   * Initialized the <code>Card</code> instance with the specified {@link Suit} and {@link Rank}
    *
-   *
-   *
-   * @param rank  cards's rank (A,2, &hellip;K).
+   * @param rank cards's rank (A,2, &hellip;K).
    * @param suit card(Clubs, Diamonds, Hearts, Spades)
    */
-
 
 
   public Card(Rank rank, Suit suit) {
@@ -49,4 +45,12 @@ public class Card {
     return String.format("%2s %s", rank, suit);
   }
 
+  @Override
+  public int compareTo(Card other) {
+    int comparison = getSuit().compareTo(other.getSuit());
+    if (comparison == 0) {
+      comparison = getRank().compareTo(other.getRank());
+    }
+    return comparison;
+  }
 }
